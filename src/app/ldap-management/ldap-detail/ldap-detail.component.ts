@@ -65,7 +65,7 @@ export abstract class LdapDetailComponent {
   }
 
   isFormValid(): boolean {
-    return this.userForm.valid
+    return this.userForm?.valid
     &&  (!this.addForm || this.formGetValue('passwordGroup.password') !== '');
   }
 

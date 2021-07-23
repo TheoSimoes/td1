@@ -46,7 +46,7 @@ export class LdapListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  private getUsers(): void {
+  getUsers(): void {
     this.usersService.getUsers().subscribe( users => {
       if (this.unactiveSelected) {
         this.dataSource.data = users.filter( user => user.active === false);

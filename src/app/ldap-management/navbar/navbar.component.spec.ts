@@ -8,6 +8,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { NavbarComponent } from './navbar.component';
+import { Router } from '@angular/router';
+
+class FakeRouter {
+
+}
+
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -16,6 +22,9 @@ describe('NavbarComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [NavbarComponent],
+      providers: [
+        {provide: Router, useClass: FakeRouter},
+      ],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
